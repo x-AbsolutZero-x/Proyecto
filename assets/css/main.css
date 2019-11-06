@@ -2820,11 +2820,6 @@ input, select, textarea {
 				margin: 0 0 2em 0;
 			}
 
-			.image.image.featured img{
-				width: 600px;
-				height: 450px;
-			}
-
 			.image.left {
 				margin: 0 1em 1em 0;
 			}
