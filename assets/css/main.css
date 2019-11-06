@@ -1778,6 +1778,7 @@ input, select, textarea {
 
 /* Image */
 
+
 	.image {
 		position: relative;
 		display: inline-block;
@@ -1795,7 +1796,24 @@ input, select, textarea {
 			width: 100%;
 		}
 
+		.col-6 .image.fit img{
+			height: 150px;
+		}
+
 		.image.featured {
+			display: block;
+			width: 100%;
+			margin: 0 0 4em 0;
+		}
+
+		.image.featured img{
+			display: block;
+			width: 100%;
+			height: 300px;
+			margin: 0 0 4em 0;
+		}
+
+		.image.restaurant{
 			display: block;
 			width: 100%;
 			margin: 0 0 4em 0;
@@ -2107,6 +2125,9 @@ input, select, textarea {
 		}
 
 /* Icons */
+#icon{
+	border-radius: 50px;
+}
 
 	.icon {
 		text-decoration: none;
@@ -2599,7 +2620,7 @@ input, select, textarea {
 		.carousel article {
 			display: inline-block;
 			width: 18em;
-			background: #fff;
+			background:#bda157;
 			text-align: center;
 			padding: 0 1em 3em 1em;
 			margin: 0 2em 0 0;
