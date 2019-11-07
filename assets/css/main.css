@@ -1836,7 +1836,7 @@ input, select, textarea {
 
 	.caja.producto .imagen .image.kit img{
 		width: 100%;
-		min-height: 280px;
+		min-height: auto;
 		height: auto;
 	}
 
@@ -2740,6 +2740,14 @@ input, select, textarea {
 	@media screen and (max-width: 1280px) {
 
 		/* Basic */
+		.caja.producto{
+			flex-wrap: wrap;
+			vertical-align: center;
+			align-items: center;
+			justify-content: center;
+
+		}
+
 
 			body, input, textarea, select {
 				font-size: 12pt;
