@@ -1881,6 +1881,20 @@ input, select, textarea {
 	width: 100%;
 }
 
+/*Map*/
+
+.map-ubi{
+	margin: 0;
+	padding: 0;
+}
+
+.ubi-link {
+	margin: 0 0 10px 0;
+}
+
+.ubi-link button{
+	
+}
 
 /* List */
 
