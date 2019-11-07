@@ -1879,7 +1879,6 @@ input, select, textarea {
 	justify-content: justify;
 	align-items: center;
 	width: 100%;
-	overflow: auto;
 }
 
 
