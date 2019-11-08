@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("fontawesome-all.min.css");
+@import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
+
 
 /*
 	Helios by HTML5 UP
@@ -262,6 +264,13 @@ input, select, textarea {
 
 			.container {
 				width: 100%;
+			}
+
+			.caja-insta .insta-title p{
+				font-family: 'Cookie', cursive;
+				font-size: 20px;
+				margin: 0 0.5em;
+				padding: 0;
 			}
 
 		}
@@ -2019,6 +2028,43 @@ input, select, textarea {
 					color: #ef8376;
 				}
 
+		
+		/* Insta*/
+		
+		.caja-insta{
+			display: flex;
+			margin: 1%;
+		}
+		
+		.caja-insta .insta-logo{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			width: 35%;
+		}
+
+		.caja-insta img{
+			width: 40px;
+			height: 40px;
+		}
+		
+		.caja-insta .insta-title{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			width: 55%;
+		}
+
+
+		.caja-insta .insta-title p{
+			font-family: 'Cookie', cursive;
+			font-size: 30px;
+			margin: 0 0.5em;
+			padding: 0;
+		}
+		
 /* Form */
 
 	form label {
