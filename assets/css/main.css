@@ -2422,6 +2422,7 @@ input, select, textarea {
 
 	.fecha_hora {
 		display: flex;
+		width: auto;
 	}
 
 	.fecha_hora .fecha{
