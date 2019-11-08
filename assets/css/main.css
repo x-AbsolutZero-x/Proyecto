@@ -2420,6 +2420,41 @@ input, select, textarea {
 
 /* Nav */
 
+	.fecha_hora {
+		display: flex;
+	}
+
+	.fecha_hora .fecha{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 25%;
+	}
+
+	.bloque1{
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 25%;
+	}
+
+
+	.bloque2{
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 25%;
+	}
+
+	.fecha_hora .hora {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 25%;
+	}
+	
 	#nav {
 		position: absolute;
 		top: 0;
