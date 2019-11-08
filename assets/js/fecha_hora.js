@@ -13,7 +13,7 @@ function startTime(){
     
 
     document.getElementById('fecha').innerHTML = "Fecha: " + dia + "/" + mes + "/" + anio;
-    document.getElementById('hora').innerHTML =  " Hora actual: " + horas + ":" + minutos + ":" +segundos + " " + am_pm + "";
+    document.getElementById('hora').innerHTML =  " Hora: " + horas + ":" + minutos + ":" +segundos + " " + am_pm + "";
     tiempo = setTimeout('startTime()',500);}
     
     function checkTime(i){
