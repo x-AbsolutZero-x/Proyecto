@@ -1902,9 +1902,6 @@ input, select, textarea {
 	margin: 0 0 10px 0;
 }
 
-.ubi-link button{
-	
-}
 
 /* List */
 
@@ -2028,6 +2025,8 @@ input, select, textarea {
 					color: #ef8376;
 				}
 
+
+	
 		
 		/* Insta*/
 		
@@ -2518,6 +2517,7 @@ input, select, textarea {
 				margin: -9px 0.5em 0 0.5em;
 				border-radius: 0.5em;
 				padding: 0.85em;
+				text-transform: capitalize;
 				border: solid 1px transparent;
 				-moz-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 				-webkit-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
