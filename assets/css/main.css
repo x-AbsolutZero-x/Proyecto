@@ -2315,9 +2315,11 @@ input, select, textarea {
 	#header img{
 		top: 50%; transform: translateY(-50%);
 		width: 100%;
-		height: 100vh;
+		height: auto;
+		max-height: 150%;
 		left:0;
 		vertical-align: center;
+		align-items: center;
 		z-index: 0;
 		position: absolute;
 		opacity: 0.2;
