@@ -1850,6 +1850,9 @@ input, select, textarea {
 		height: auto;
 	}
 
+
+	
+
 /* Products*/
 
 .caja.producto{
@@ -1890,6 +1893,7 @@ input, select, textarea {
 	align-items: center;
 	width: 100%;
 }
+
 
 /*Map*/
 
@@ -2363,7 +2367,7 @@ input, select, textarea {
 			}
 
 		#header h1 {
-			color: #fff;
+			color:#efb810;
 			font-size: 3em;
 			line-height: 1em;
 		}
