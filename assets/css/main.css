@@ -1855,6 +1855,7 @@ input, select, textarea {
 .caja.producto{
 	display: flex;
 	flex-direction: row;
+	margin:10%;
 }
 
 .caja.producto .imagen{
