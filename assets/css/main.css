@@ -1915,6 +1915,19 @@ input, select, textarea {
 		padding-left: 1em;
 	}
 
+	#ulproducts li{
+		margin-bottom: 2%;
+	}
+	
+	.caja.producto .info .text{
+		margin-left: 5%;
+	}
+
+	.caja.producto .info .text ul li{
+		margin-bottom: 5%;
+		margin-left: 5%;
+	}
+
 		ul li {
 			padding-left: 0.5em;
 		}
