@@ -2846,7 +2846,7 @@ input, select, textarea {
 				vertical-align: center;
 				z-index: 0;
 				position: absolute;
-				opacity: 0.2;
+				opacity: 0.5;
 				-webkit-filter: blur(5px);
 				-webkit-backface-visibility: hidden; 
 				filter: blur(5px);
