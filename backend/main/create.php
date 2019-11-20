@@ -25,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $descripcion = $input_descripcion;
     }
 
+    // Validate categoria
     $input_categoria = trim($_POST["categoria"]);
     if(empty($input_categoria)){
         $categoria_err = "Please enter a categoria.";
@@ -43,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $precio = $input_precio;
     }
-    //
+    // Validate image
     $target_dir = "../../images/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
@@ -89,17 +90,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($name_err) && empty($descripcion_err) && empty($categoria_err) && empty($precio_err) ){
         // Prepare an insert statement
-        $sql = "INSERT INTO producto (name, descripcion, categoria, precio) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO producto (name, descripcion, categoria, precio, imagen) VALUES (?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_descripcion, $param_categoria, $param_precio);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_name, $param_descripcion, $param_categoria, $param_precio, $param_imagen);
             
             // Set parameters
             $param_name = $name;
             $param_descripcion = $descripcion;
             $param_categoria = $categoria;
             $param_precio = $precio;
+            $param_imagen = $_FILES["fileToUpload"]["name"];
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -163,9 +165,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                             <span class="help-block"><?php echo $precio_err;?></span>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?php echo (!empty($imagen_err)) ? 'has-error' : ''; ?>">>
                             <label>Foto</label>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="file" name="fileToUpload" classe ="form-control" id="fileToUpload" value="<?php echo $imagen; ?>">
+                            <span class="help-block"><?php echo $imagen_err;?></span>
                         </div>
                         
                         <input type="submit" class="btn btn-primary" value="Submit">

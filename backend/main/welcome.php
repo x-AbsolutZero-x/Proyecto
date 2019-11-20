@@ -77,6 +77,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                         echo "<th>categoria</th>";
                                         echo "<th>precio</th>";
                                         echo "<th>Action</th>";
+                                        echo "<th>Imagenes</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
@@ -87,8 +88,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                         echo "<td>" . $row['descripcion'] . "</td>";
                                         echo "<td>" . $row['categoria'] . "</td>";
                                         echo "<td>" . $row['precio'] . "</td>";
+                                        echo '<td> . <img class="activator" src="../../images/'.$row['imagen'].'"  height="250px"></td>';
                                         echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                             echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
                                             echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
