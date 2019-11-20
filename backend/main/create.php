@@ -16,10 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $name_err = "Please enter a valid name.";
     } else{
         $name = $input_name;
-    }
-
-    
-    
+    }    
     // Validate descripcion
     $input_descripcion = trim($_POST["descripcion"]);
     if(empty($input_descripcion)){
@@ -46,7 +43,49 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $precio = $input_precio;
     }
-    
+    //
+    $target_dir = "../../images/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check file size
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
     // Check input errors before inserting in database
     if(empty($name_err) && empty($descripcion_err) && empty($categoria_err) && empty($precio_err) ){
         // Prepare an insert statement
@@ -103,7 +142,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <h2>Create Record</h2>
                     </div>
                     <p>Please fill this form and submit to add employee record to the database.</p>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                             <label>Name</label>
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
@@ -124,6 +163,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                             <span class="help-block"><?php echo $precio_err;?></span>
                         </div>
+                        <div class="form-group">
+                            <label>Foto</label>
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                        </div>
+                        
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>
