@@ -1,7 +1,21 @@
 <?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
+
+<?php
+
 // Include config file
 require_once "../../lib/config.php";
- 
+//CHecking session
+
 // Define variables and initialize with empty values
 $name = $descripcion = $categoria = $precio ="";
 $name_err = $descripcion_err = $categoria_err = $precio_err = "";
@@ -163,7 +177,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <select name="categoria" class="custom-select" id="inputGroupSelect01">
                                 <option selected>Seleccione una categoría...</option>
                                 <option value="regulados">Mods Regulados</option>
-                                <option value="mecánicos">Mods Mecánicos</option>
+                                <option value="mecanicos">Mods Mecánicos</option>
                                 <option value="kits">Kits</option>
                                 <option value="aio">AIO</option>
                                 <option value="rda">Atomizadores RDA</option>
@@ -171,7 +185,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <option value="rdta">Atomizadores RDTA</option>
                                 <option value="mtl">Atomizadores MTL</option>   
                                 <option value="pod system">Pod System</option>   
-                                <option value="algodón">Algodón</option>   
+                                <option value="algodon">Algodón</option>   
                                 <option value="baterías">Baterías</option>
                                 <option value="coils">Coils</option>
                                 <option value="cargador">Cargador</option>   
@@ -195,7 +209,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                         
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <a href="welcome.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>        
