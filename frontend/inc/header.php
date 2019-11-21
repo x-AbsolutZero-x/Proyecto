@@ -93,8 +93,8 @@
 								<li>
 									<a href="#">Bar</a>
 									<ul>
-										<li><a href="Bar_snacks.php">Snacks</a></li>
-										<li><a href="Bar_drinks.php">Bebidas</a></li>										
+									<li><a href="Bar_snacks.php?categoria=snacks">Snacks</a></li>
+										<li><a href="Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
 									</ul>
 								</li>
 								<li><a href="right-sidebar.php">Right Sidebar</a></li>
