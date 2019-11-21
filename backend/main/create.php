@@ -160,9 +160,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $descripcion_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($categoria_err)) ? 'has-error' : ''; ?>">
-                            <label>categoria</label>
-                            <input type="text" name="categoria" class="form-control" value="<?php echo $categoria; ?>">
-                            <span class="help-block"><?php echo $categoria_err;?></span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
+                            </div>
+                            <select name="categoria" class="custom-select" id="inputGroupSelect01">
+                                <option selected>Seleccione una categoría...</option>
+                                <option value="mods_regulados">Mods Regulados</option>
+                                <option value="mods_mecanicos">Mods Mecánicos</option>
+                                <option value="drinks">Bebidas</option>
+                                <option value="snacks">Snacks</option>
+                            </select>
+                            </div>
                         </div>
                         <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
                             <label>precio</label>
