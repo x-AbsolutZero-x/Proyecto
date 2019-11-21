@@ -85,19 +85,46 @@
 							<!--Productos-->	
 									<div class="caja producto">	
 											<div class="imagen">
-												<a href="#" class="image kit"><img src="images/Bar_gal/dummy.jpg" alt="" /></a>
-											</div>
-											<div class="info">
-												<div class="caja-title">
-													<header class="title">
-															<h3>Snack1</h3>
-													</header>
-												</div>
-												<div class="text">
-													<ul>
-														<p>Dummy description for snacks</p>
-													</ul>
-												</div>	
+											<?php
+											// Include config file
+											require_once "../lib/config.php";
+											
+											// Attempt select query execution
+											$sql = "SELECT * FROM producto WHERE categoria = 'mods' ";
+											if($result = mysqli_query($link, $sql)){
+												if(mysqli_num_rows($result) > 0){
+													echo "<table class='table table-bordered table-striped'>";
+															echo "<thead>";
+															echo "<th>Name</th>";
+															echo "<th>descripcion</th>";
+															echo "<th>categoria</th>";
+															echo "<th>precio</th>";
+															echo "<th>imagen</th>";
+															echo "</thead>";
+															echo "<tbody>";
+														while($row = mysqli_fetch_array($result)){
+															echo "<tr>";
+															echo "<td>" . $row['name'] . "</td>";
+															echo "<td>" . $row['descripcion'] . "</td>";
+															echo "<td>" . $row['categoria'] . "</td>";
+															echo "<td>" . $row['precio'] . "</td>";
+															echo '<td> . <img class="activator" src="../images/'.$row['imagen'].'"  height="250px"></td>';
+																;
+														}
+														echo "</tbody>";                            
+													echo "</table>";
+													// Free result set
+													mysqli_free_result($result);
+												} else{
+													echo "<p class='lead'><em>No records were found.</em></p>";
+												}
+											} else{
+												echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+											}
+						
+											// Close connection
+											mysqli_close($link);
+											?>
 											</div>
 										
 									</div>
