@@ -23,26 +23,13 @@
                       <!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="#" id="logo">TITLE</a></h1>
+								<h1><a href="#" id="logo"> <?php $categoria = $_GET["categoria"]; echo $categoria; ?> </a></h1>
 							</header>
 						</div>
 
 					
 					<!-- Nav -->
 					<nav id="nav">
-							<div class="fecha_hora">
-								<div class="fecha">
-									<div id="fecha" style="font-size:20px;"></div>    
-								</div>
-	
-								<div class="bloque1"></div>
-								<div class="bloque2"></div>
-	
-								<div class="hora">
-										<div id="hora" style="font-size:20px;"></div>    
-								</div>
-							</div>
-			
 							<ul>
 								<li><a href="index.php">Inicio</a></li>
 								<li>
@@ -51,31 +38,31 @@
 										<li>
 											<a href="#">MODS</a>
 											<ul>
-												<li><a href="M_Regulados.php">Regulados</a></li>
-												<li><a href="M_Mecanicos.php">Mecánicos</a></li>
+												<li><a href="M_Regulados.php?categoria=regulados">Regulados</a></li>
+												<li><a href="M_Mecanicos.php?categoria=mecánicos">Mecánicos</a></li>
 											</ul>
 										</li>
-										<li><a href="Kits.php">Kits</a></li>
-										<li><a href="AIO.php">AIO</a></li>
+										<li><a href="Kits.php?categoria=kits">Kits</a></li>
+										<li><a href="AIO.php?categoria=aio">AIO</a></li>
 										<li>
 											<a href="#">Atomizadores</a>
 											<ul>
-												<li><a href="A_rda.php">rda</a></li>
-												<li><a href="A_dta.php">dta</a></li>
-												<li><a href="A_rdta.php">rdta</a></li>
-												<li><a href="A_mtl.php">mtl</a></li>
+												<li><a href="A_rda.php?categoria=rda">rda</a></li>
+												<li><a href="A_dta.php?categoria=dta">dta</a></li>
+												<li><a href="A_rdta.php?categoria=rdta">rdta</a></li>
+												<li><a href="A_mtl.php?categoria=mtl">mtl</a></li>
 											</ul>
 										</li>
 										<li>
 											<a href="#">Componentes</a>
 											<ul>
-												<li><a href="C_PodSys.php">Pod System</a></li>
-												<li><a href="C_Algodon.php">Algodón</a></li>
-												<li><a href="C_Baterias.php">Baterias</a></li>
-												<li><a href="C_Coils.php">Coils</a></li>
-												<li><a href="C_Cargador.php">Cargador</a></li>
-												<li><a href="C_DripTip.php">DRIP TIP</a></li>
-												<li><a href="C_Doors.php">DOORS</a></li>
+												<li><a href="C_PodSys.php?categoria=pod system">Pod System</a></li>
+												<li><a href="C_Algodon.php?categoria=algodón">Algodón</a></li>
+												<li><a href="C_Baterias.php?categoria=baterías">Baterías</a></li>
+												<li><a href="C_Coils.php?categoria=coils">Coils</a></li>
+												<li><a href="C_Cargador.php?categoria=cargador">Cargador</a></li>
+												<li><a href="C_DripTip.php?categoria=drip tip">DRIP TIP</a></li>
+												<li><a href="C_Doors.php?categoria=doors">DOORS</a></li>
 											</ul>
 										</li>
 										
@@ -86,12 +73,12 @@
 								<li>
 									<a href="#">Bar</a>
 									<ul>
-										<li><a href="Bar_snacks.php">Snacks</a></li>
-										<li><a href="Bar_drinks.php">Bebidas</a></li>										
+										<li><a href="Bar_snacks.php?categoria=snacks">Snacks</a></li>
+										<li><a href="Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
 									</ul>
 								</li>
-								<li><a href="right-sidebar.php">Right Sidebar</a></li>
-								<li><a href="no-sidebar.php">No Sidebar</a></li>
+								<li><a href="right-sidebar.php?categoria=rsidebar">Right Sidebar</a></li>
+								<li><a href="no-sidebar.php?categoria=nsidebar">No Sidebar</a></li>
 							</ul>
 						</nav>
 

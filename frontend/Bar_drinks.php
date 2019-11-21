@@ -1,7 +1,3 @@
-<script>
-var x = "Bebidas";
-</script>
-
 <?php 
   include("inc/header_product.php");
 ?>
@@ -97,101 +93,14 @@ var x = "Bebidas";
 										<p>
 											Morbi convallis lectus malesuada sed fermentum dolore amet
 										</p>
-									</header>
+										</header>
 							
-							<!--Productos-->	
-									<div class="caja producto">	
-											<div class="imagen">
-												<a href="#" class="image kit"><img src="images/Bar_gal/dummy.jpg" alt="" /></a>
-											</div>
-											<div class="info">
-											<?php
-											// Include config file
-											require_once "../lib/config.php";
-											
-											// Attempt select query execution
-											$sql = "SELECT * FROM producto";
-											if($result = mysqli_query($link, $sql)){
-												if(mysqli_num_rows($result) > 0){
-													echo "<table class='table table-bordered table-striped'>";
-														echo "<thead>";
-															echo "<tr>";
-																echo "<th>#</th>";
-																echo "<th>Name</th>";
-																echo "<th>Address</th>";
-																echo "<th>Salary</th>";
-																echo "<th>Action</th>";
-															echo "</tr>";
-														echo "</thead>";
-														echo "<tbody>";
-														while($row = mysqli_fetch_array($result)){
-															echo "<tr>";
-																echo "<td>" . $row['nombre_producto'] . "</td>";
-																echo "<td>" . $row['precio'] . "</td>";
-																echo "<td>" . $row['descripcion'] . "</td>";
-																echo "<td>" . $row['categoria'] . "</td>";
-																echo "<td>" . $row['imagen'] . "</td>";
-																;
-														}
-														echo "</tbody>";                            
-													echo "</table>";
-													// Free result set
-													mysqli_free_result($result);
-												} else{
-													echo "<p class='lead'><em>No records were found.</em></p>";
-												}
-											} else{
-												echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-											}
-						
-											// Close connection
-											mysqli_close($link);
-											?>
-											</div>
+										<!--Productos-->	
+										<?php include("inc/categoria.php"); ?>
 										
-									</div>
-									<div class="caja producto">	
-                                        <div class="imagen">
-                                            <a href="#" class="image kit"><img src="images/Bar_gal/dummy.jpg" alt="" /></a>
-                                        </div>
-                                        <div class="info">
-                                            <div class="caja-title">
-                                                <header class="title">
-                                                        <h3>Drink2</h3>
-                                                </header>
-                                            </div>
-                                            <div class="text">
-                                                <ul>
-                                                    <p>Dummy description for drinks</p>
-                                                </ul>
-                                            </div>	
-                                        </div>
-                                    
-                                </div>
-                                <div class="caja producto">	
-                                    <div class="imagen">
-                                        <a href="#" class="image kit"><img src="images/Bar_gal/dummy.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="info">
-                                        <div class="caja-title">
-                                            <header class="title">
-                                                    <h3>Drink3</h3>
-                                            </header>
-                                        </div>
-                                        <div class="text">
-                                            <ul>
-                                                <p>Dummy description for drinks</p>
-                                            </ul>
-                                        </div>	
-                                    </div>
-                                
-                            </div>
-                                
-                            </div>
-									
-									</div>
-																
-								</article>
+										</div>
+																	
+									</article>
 							</div>
 						</div>
 						<hr />

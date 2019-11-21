@@ -156,9 +156,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $descripcion_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($categoria_err)) ? 'has-error' : ''; ?>">
-                            <label>categoria</label>
-                            <input type="text" name="categoria" class="form-control" value="<?php echo $categoria; ?>">
-                            <span class="help-block"><?php echo $categoria_err;?></span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
+                            </div>
+                            <select name="categoria" class="custom-select" id="inputGroupSelect01">
+                                <option selected>Seleccione una categoría...</option>
+                                <option value="regulados">Mods Regulados</option>
+                                <option value="mecánicos">Mods Mecánicos</option>
+                                <option value="kits">Kits</option>
+                                <option value="aio">AIO</option>
+                                <option value="rda">Atomizadores RDA</option>
+                                <option value="dta">Atomizadores DTA</option>
+                                <option value="rdta">Atomizadores RDTA</option>
+                                <option value="mtl">Atomizadores MTL</option>   
+                                <option value="pod system">Pod System</option>   
+                                <option value="algodón">Algodón</option>   
+                                <option value="baterías">Baterías</option>
+                                <option value="coils">Coils</option>
+                                <option value="cargador">Cargador</option>   
+                                <option value="drip tip">DRIP TIP</option>
+                                <option value="doors">DOORS</option>
+                                                             
+                                <option value="drinks">Bebidas</option>
+                                <option value="snacks">Snacks</option>
+                            </select>
+                            </div>
                         </div>
                         <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
                             <label>precio</label>
