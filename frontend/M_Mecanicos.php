@@ -80,82 +80,14 @@
 										<p>
 											Morbi convallis lectus malesuada sed fermentum dolore amet
 										</p>
-									</header>
+										</header>
 							
-								
-									<div class="caja producto">	
-											<div class="imagen">
-												<a href="#" class="image kit"><img src="../images/Productos/MODS/M_Mecanicos/m_mecanico1.jpeg" alt="mec1" /></a>
-											</div>
-											<div class="info">
-												<div class="caja-title">
-													<header class="title">
-															<h3>dotMod Squonk</h3>
-													</header>
-												</div>
-												<div class="text">
-													<ul>
-														<li>	Potencia 200w.</li>
-														<li>	Trae pin de squonk 510 de latón chapado en oro de 24k y 510.</li>
-														<li>	Ocupa 1 batería 20700 o 18650.</li>
-														<li>    Con tarjeta de autenticidad.</li>
-														<li>	Accesorios: Manual con instrucciones.</li>
-														
-													</ul>
-												</div>	
-											</div>
+										<!--Productos-->	
+										<?php include("inc/categoria.php"); ?>
 										
-									</div>
-									<div class="caja producto">	
-											<div class="imagen">
-												<a href="#" class="image kit"><img src="../images/Productos/MODS/M_Mecanicos/m_mecanico2.jpg" alt="mec2" /></a>
-											</div>
-											<div class="info">
-												<div class="caja-title">
-													<header class="title">
-															<h3>dotBox Dual Mech</h3>
-													</header>
-												</div>
-												<div class="text">
-													<ul>
-														<li>	Potencia 200w.</li>
-														<li>	Funciones de protección contra cortocircuitos.</li>
-														<li>	Ocupa 2 baterías 18650.</li>
-														<li>    Con tarjeta de autenticidad.</li>
-														<li>	Accesorios: Manual con instrucciones.</li>
-														
-													</ul>
-												</div>	
-											</div>
-										
-									</div>
-									<div class="caja producto">	
-											<div class="imagen">
-												<a href="#" class="image kit"><img src="../images/Productos/MODS/M_Mecanicos/m_mecanico3.jpg" alt="mec3" /></a>
-											</div>
-											<div class="info">
-												<div class="caja-title">
-													<header class="title">
-															<h3>dotMech22 Petri Lite (22mm)</h3>
-													</header>
-												</div>
-												<div class="text">
-													<ul>
-														<li>	Diseño de botón compuesto de aluminio anodizado
-																Tubo y cuerpo de aluminio anodizado de precisión de 22 mm</li>
-														<li>	Roscado, contactos y acentos chapados en oro de 24K.</li>
-														<li>    Con tarjeta de autenticidad.</li>
-														<li>	Accesorios: Manual con instrucciones.</li>
-														
-													</ul>
-												</div>	
-											</div>
-										
-									</div>
-									
-									</div>
-																
-								</article>
+										</div>
+																	
+									</article>
 							</div>
 						</div>
 						<hr />
