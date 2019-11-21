@@ -80,7 +80,11 @@
 								<li>
 									<a href="#">Bar</a>
 									<ul>
+<<<<<<< HEAD
 										<li><a href="Bar_snacks.php?categoria=snacks">Snacks</a></li>
+=======
+									<li><a href="Bar_snacks.php?categoria=snacks">Snacks</a></li>
+>>>>>>> 79ec1b67ab01327138e21643cfbcd224b8c1811f
 										<li><a href="Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
 									</ul>
 								</li>
