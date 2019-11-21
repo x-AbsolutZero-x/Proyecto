@@ -1,7 +1,11 @@
 <?php
 // Include config file
 require_once "../../lib/config.php";
- 
+//CHecking session
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
 // Define variables and initialize with empty values
 $name = $descripcion = $categoria = $precio ="";
 $name_err = $descripcion_err = $categoria_err = $precio_err = "";
