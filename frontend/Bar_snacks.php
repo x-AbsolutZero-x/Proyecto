@@ -83,8 +83,6 @@
 									</header>
 							
 							<!--Productos-->	
-									<div class="caja producto">	
-											<div class="imagen">
 											<?php
 											// Include config file
 											require_once "../lib/config.php";
@@ -93,26 +91,20 @@
 											$sql = "SELECT * FROM producto WHERE categoria = 'mods' ";
 											if($result = mysqli_query($link, $sql)){
 												if(mysqli_num_rows($result) > 0){
-													echo "<table class='table table-bordered table-striped'>";
-															echo "<thead>";
-															echo "<th>Name</th>";
-															echo "<th>descripcion</th>";
-															echo "<th>categoria</th>";
-															echo "<th>precio</th>";
-															echo "<th>imagen</th>";
-															echo "</thead>";
-															echo "<tbody>";
+															
 														while($row = mysqli_fetch_array($result)){
-															echo "<tr>";
-															echo "<td>" . $row['name'] . "</td>";
-															echo "<td>" . $row['descripcion'] . "</td>";
-															echo "<td>" . $row['categoria'] . "</td>";
-															echo "<td>" . $row['precio'] . "</td>";
-															echo '<td> . <img class="activator" src="../images/'.$row['imagen'].'"  height="250px"></td>';
-																;
-														}
-														echo "</tbody>";                            
-													echo "</table>";
+															echo "<div class='caja producto'>";
+															echo '<div class="imagen"> . <img class="activator" src="../images/'.$row['imagen'].'" "></div>';
+															echo "<div class='info'><div class='caja-title'><header class='title'><h3>" . $row['name'] . "</h3></header></div>";
+															
+															echo "<div class='text'><ul>";
+															echo "<li>Descripción: " . $row['descripcion'] . "</li>";
+															echo "<li>Categoría: " . $row['categoria'] . "</li>";
+															echo "<li>Precio: $" . $row['precio'] . "</li>";
+															echo "</ul></div>";
+															
+															echo "</div></div>";
+														}  
 													// Free result set
 													mysqli_free_result($result);
 												} else{
@@ -121,49 +113,12 @@
 											} else{
 												echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 											}
-						
+											echo "</div>";
 											// Close connection
 											mysqli_close($link);
 											?>
-											</div>
-										
-									</div>
-									<div class="caja producto">	
-                                        <div class="imagen">
-                                            <a href="#" class="image kit"><img src="images/Bar_gal/dummy.jpg" alt="" /></a>
-                                        </div>
-                                        <div class="info">
-                                            <div class="caja-title">
-                                                <header class="title">
-                                                        <h3>Snack2</h3>
-                                                </header>
-                                            </div>
-                                            <div class="text">
-                                                <ul>
-                                                    <p>Dummy description for snacks</p>
-                                                </ul>
-                                            </div>	
-                                        </div>
-                                    
-                                </div>
-                                <div class="caja producto">	
-                                    <div class="imagen">
-                                        <a href="#" class="image kit"><img src="images/Bar_gal/dummy.jpg" alt="" /></a>
-                                    </div>
-                                    <div class="info">
-                                        <div class="caja-title">
-                                            <header class="title">
-                                                    <h3>Snack3</h3>
-                                            </header>
-                                        </div>
-                                        <div class="text">
-                                            <ul>
-                                                <p>Dummy description for snacks</p>
-                                            </ul>
-                                        </div>	
-                                    </div>
-                                
-                            </div>
+									
+									
 									
 									</div>
 																
