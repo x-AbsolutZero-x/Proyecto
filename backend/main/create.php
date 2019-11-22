@@ -140,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create Record</title>
+    <title>Añadir producto</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         .wrapper{
@@ -155,17 +155,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2>Create Record</h2>
+                        <h2>Añadir producto</h2>
                     </div>
                     <p>Please fill this form and submit to add employee record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
+                            <label>Nombre</label>
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($descripcion_err)) ? 'has-error' : ''; ?>">
-                            <label>descripcion</label>
+                            <label>Descripción</label>
                             <textarea name="descripcion" class="form-control"><?php echo $descripcion; ?></textarea>
                             <span class="help-block"><?php echo $descripcion_err;?></span>
                         </div>
@@ -198,18 +198,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                         </div>
                         <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
-                            <label>precio</label>
+                            <label>Precio</label>
                             <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                             <span class="help-block"><?php echo $precio_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($imagen_err)) ? 'has-error' : ''; ?>">>
+                        <div class="form-group <?php echo (!empty($imagen_err)) ? 'has-error' : ''; ?>">
                             <label>Foto</label>
                             <input type="file" name="fileToUpload" classe ="form-control" id="fileToUpload" value="<?php echo $imagen; ?>">
                             <span class="help-block"><?php echo $imagen_err;?></span>
                         </div>
                         
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="welcome.php" class="btn btn-default">Cancel</a>
+                        <input type="submit" class="btn btn-primary" value="Agregar">
+                        <a href="welcome.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>        
