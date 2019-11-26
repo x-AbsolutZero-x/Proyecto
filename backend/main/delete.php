@@ -3,7 +3,23 @@
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Include config file
     require_once "../../lib/config.php";
+
+    $id = $_POST["id"];
     
+    // Attempt select query execution
+    $sql = "SELECT * FROM producto WHERE id = '".$id."' ";
+
+    if($result = mysqli_query($link, $sql)){
+        $row = mysqli_fetch_array($result);
+        $imagen = $row['imagen'];
+        unlink('../../images/'.$imagen.'');
+        //header("location: success.php?imagen=".$imagen."");
+        
+          //  exit();
+
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
     // Prepare a delete statement
     $sql = "DELETE FROM producto WHERE id = ?";
     
