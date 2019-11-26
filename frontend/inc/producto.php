@@ -3,13 +3,14 @@
     // Include config file
     require_once "../lib/config.php";
     $categoria = $_GET["categoria"];
+    $id = $_GET["id"];
     // Attempt select query execution
-    $sql = "SELECT * FROM producto WHERE categoria = '".$categoria."' ";
+    $sql = "SELECT * FROM producto WHERE categoria = '".$categoria."' && id =  ";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
                     
                 while($row = mysqli_fetch_array($result)){
-                    echo "<a href='inc/producto.php?id=".$row['id']."'>";
+                    echo "<a href='producto.php?id=".$row['id']."'>";
                     echo "<div class='caja producto'>";
                     echo '<div class="imagen"> . <img class="activator" src="../images/'.$row['imagen'].'" "></div>';
                     echo "<div class='info'><div class='caja-title'><header class='title' '><h3>" . $row['name'] . "</h3></header></div>";
