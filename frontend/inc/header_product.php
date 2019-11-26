@@ -39,7 +39,7 @@
 											<a href="#">MODS</a>
 											<ul>
 												<li><a href="M_Regulados.php?categoria=regulados">Regulados</a></li>
-												<li><a href="M_Mecanicos.php?categoria=mecánicos">Mecánicos</a></li>
+												<li><a href="M_Mecanicos.php?categoria=mecanicos">Mecánicos</a></li>
 											</ul>
 										</li>
 										<li><a href="Kits.php?categoria=kits">Kits</a></li>
@@ -57,8 +57,8 @@
 											<a href="#">Componentes</a>
 											<ul>
 												<li><a href="C_PodSys.php?categoria=pod system">Pod System</a></li>
-												<li><a href="C_Algodon.php?categoria=algodón">Algodón</a></li>
-												<li><a href="C_Baterias.php?categoria=baterías">Baterías</a></li>
+												<li><a href="C_Algodon.php?categoria=algodon">Algodón</a></li>
+												<li><a href="C_Baterias.php?categoria=baterias">Baterías</a></li>
 												<li><a href="C_Coils.php?categoria=coils">Coils</a></li>
 												<li><a href="C_Cargador.php?categoria=cargador">Cargador</a></li>
 												<li><a href="C_DripTip.php?categoria=drip tip">DRIP TIP</a></li>
@@ -78,7 +78,8 @@
 									</ul>
 								</li>
 								<li><a href="right-sidebar.php?categoria=rsidebar">Right Sidebar</a></li>
-								<li><a href="no-sidebar.php?categoria=nsidebar">No Sidebar</a></li>
+								<li><a href="login.php">Iniciar sesion</a></li>
+								<li><a href="register.php">Registrarse</a></li>
 							</ul>
 						</nav>
 

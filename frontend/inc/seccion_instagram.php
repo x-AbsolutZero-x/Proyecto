@@ -14,8 +14,6 @@
 		
 	</a>
 </div>
-			
-
 <!-- Photos -->
 <section class="col-4 col-12-mobile">
 	<div class="row gtr-25">
