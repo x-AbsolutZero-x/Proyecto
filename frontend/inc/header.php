@@ -1,3 +1,15 @@
+<?php 
+session_start();
+if($_SESSION) 
+{ 
+     
+    $client = $_SESSION['username'];
+
+}
+else{
+	$client = null;
+}
+?>
 <!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
@@ -84,8 +96,8 @@
 										<li><a href="Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
 									</ul>
 								</li>
-								<li><a href="right-sidebar.php?categoria=rsidebar">Right Sidebar</a></li>
-								<li><a href="no-sidebar.php?categoria=nsidebar">No Sidebar</a></li>
+								<li><a>Hi, <b><?php echo htmlspecialchars($client); ?></b>. Welcome to our site.</a></li>
+								<li><a href="logout.php">No Sidebar</a></li>
 								<li><a href="login.php">Iniciar sesion</a></li>
 								<li><a href="register.php">Registrarse</a></li>
 							</ul>

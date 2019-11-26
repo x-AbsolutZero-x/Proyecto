@@ -1,3 +1,15 @@
+<?php 
+session_start();
+if($_SESSION) 
+{ 
+     
+    $client = $_SESSION['username'];
+
+}
+else{
+	$client = null;
+}
+?>
 <!-- Header Product -->
 <!DOCTYPE HTML>
 <!--
@@ -77,7 +89,7 @@
 										<li><a href="Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
 									</ul>
 								</li>
-								<li><a href="right-sidebar.php?categoria=rsidebar">Right Sidebar</a></li>
+								<li><a href="right-sidebar.php?categoria=rsidebar"><?php echo htmlspecialchars($client); ?></a></li>
 								<li><a href="no-sidebar.php?categoria=nsidebar">No Sidebar</a></li>
 							</ul>
 						</nav>
