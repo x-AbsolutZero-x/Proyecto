@@ -86,6 +86,8 @@
 								</li>
 								<li><a href="right-sidebar.php?categoria=rsidebar">Right Sidebar</a></li>
 								<li><a href="no-sidebar.php?categoria=nsidebar">No Sidebar</a></li>
+								<li><a href="login.php">Iniciar sesion</a></li>
+								<li><a href="register.php">Registrarse</a></li>
 							</ul>
 						</nav>
 
