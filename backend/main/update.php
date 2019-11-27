@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
 // Include config file
 require_once "../../lib/config.php";
  
@@ -117,7 +125,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     
                     // Records updated successfully. Redirect to landing page
                     
-                    header("location: welcome.php?".$_FILES["fileToUpload"]["name"]);
+                    header("location: welcome.php?".$_SESSION["tipo"]);
                     exit();
                 } else{
                     echo "Something went wrong. Please try again later.";
@@ -147,7 +155,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Records updated successfully. Redirect to landing page
-                    header("location: welcome.php");
+                    header("location: welcome.php?".$_SESSION["tipo"]);
                     exit();
                 } else{
                     echo "Something went wrong. Please try again later.";
