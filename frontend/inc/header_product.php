@@ -2,9 +2,8 @@
 session_start();
 if($_SESSION) 
 { 
-     
     $client = $_SESSION['username'];
-
+	$iduser =$_SESSION["id"];
 }
 else{
 	$client = null;

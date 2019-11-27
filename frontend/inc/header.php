@@ -1,8 +1,8 @@
 <?php 
 session_start();
 if($_SESSION) 
-{ 
-     
+{ 	
+	$iduser =$_SESSION["id"];
     $client = $_SESSION['username'];
 
 }

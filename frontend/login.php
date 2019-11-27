@@ -95,8 +95,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <title>Capitan Vape by HTML5 UP</title>
     <meta charset="utf-8" />
-    <link id="icon" rel="icon" href="../../images/logo.ico" title="CapitanVape">
-    <link rel="stylesheet" href="../../assets/css/access.css">
+    <link id="icon" rel="icon" href="../images/logo.ico" title="CapitanVape">
+    <link rel="stylesheet" href="../assets/css/access.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
