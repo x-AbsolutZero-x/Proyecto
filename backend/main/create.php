@@ -123,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: welcome.php");
                 exit();
             } else{
-                echo (mysqli_error($link));
+                echo "Something went wrong. Please try again later.";
             }
         }
          

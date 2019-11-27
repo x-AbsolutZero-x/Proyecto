@@ -1,14 +1,3 @@
-<?php 
-session_start();
-if($_SESSION) 
-{ 
-    $client = $_SESSION['username'];
-	$iduser =$_SESSION["id"];
-}
-else{
-	$client = null;
-}
-?>
 <!-- Header Product -->
 <!DOCTYPE HTML>
 <!--
