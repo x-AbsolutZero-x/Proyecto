@@ -6,16 +6,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 
     $id = $_POST["id"];
     
-    // Attempt select query execution
+    // Attempt select query execution in order to delete image
     $sql = "SELECT * FROM producto WHERE id = '".$id."' ";
 
     if($result = mysqli_query($link, $sql)){
         $row = mysqli_fetch_array($result);
         $imagen = $row['imagen'];
         unlink('../../images/'.$imagen.'');
-        //header("location: success.php?imagen=".$imagen."");
-        
-          //  exit();
 
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
