@@ -1,7 +1,7 @@
 <!--Categorias-->
 <?php
     // Include config file
-    require_once "../lib/config.php";
+    require_once "../../lib/config.php";
     $categoria = $_GET["categoria"];
     $id = $_GET["id"];
     // Attempt select query execution
