@@ -73,11 +73,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     echo "<tr>";
                                         echo "<th>#</th>";
                                         echo "<th>Name</th>";
-                                        echo "<th>descripcion</th>";
-                                        echo "<th>categoria</th>";
-                                        echo "<th>precio</th>";
-                                        echo "<th>Action</th>";
+                                        echo "<th>Descripción</th>";
+                                        echo "<th>Categoría</th>";
+                                        echo "<th>Precio</th>";
                                         echo "<th>Imagenes</th>";
+                                        echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";

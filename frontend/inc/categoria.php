@@ -9,17 +9,18 @@
         if(mysqli_num_rows($result) > 0){
                     
                 while($row = mysqli_fetch_array($result)){
-                    echo "<a href='inc/producto.php?id=".$row['id']."'>";
+                    
                     echo "<div class='caja producto'>";
+                    echo "<a class = 'imagen'  href='inc/producto.php?id=".$row['id']."'>";
                     echo '<div class="imagen"> . <img class="activator" src="../images/'.$row['imagen'].'" "></div>';
                     echo "<div class='info'><div class='caja-title'><header class='title' '><h3>" . $row['name'] . "</h3></header></div>";
+                    echo "</a>";
                     echo "<div class='text'><ul>";
                     echo "<li>Descripción: " . $row['descripcion'] . "</li>";
                     echo "<li>Categoría: " . $row['categoria'] . "</li>";
                     echo "<li>Precio: $" . $row['precio'] . "</li>";
                     echo "</ul></div>";
                     echo "</div></div>";
-                    echo "</a>";
                     
                 }  
             // Free result set
