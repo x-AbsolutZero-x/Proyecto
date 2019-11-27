@@ -19,6 +19,7 @@
                     echo "<li>Descripción: " . $row['descripcion'] . "</li>";
                     echo "<li>Categoría: " . $row['categoria'] . "</li>";
                     echo "<li>Precio: $" . $row['precio'] . "</li>";
+                    echo "<li><a href='inc/producto.php?id_producto=".$row['id']."&categoria=".$row["categoria"]."&nombre=".$row['name']."'>Agregar un comentario</a></li>";
                     echo "</ul></div>";
                     echo "</div></div>";
                     

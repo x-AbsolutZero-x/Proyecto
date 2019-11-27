@@ -2,6 +2,11 @@
 // Initialize the session
 session_start();
  
+if($_SESSION["tipo"]==="cliente"){
+    session_destroy();
+    header("location: login.php");
+    exit;
+}
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -73,11 +78,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     echo "<tr>";
                                         echo "<th>#</th>";
                                         echo "<th>Name</th>";
-                                        echo "<th>Descripción</th>";
-                                        echo "<th>Categoría</th>";
-                                        echo "<th>Precio</th>";
-                                        echo "<th>Imagenes</th>";
+                                        echo "<th>descripcion</th>";
+                                        echo "<th>categoria</th>";
+                                        echo "<th>precio</th>";
                                         echo "<th>Action</th>";
+                                        echo "<th>Imagenes</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";

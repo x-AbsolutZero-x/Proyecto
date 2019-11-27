@@ -1868,9 +1868,8 @@ input, select, textarea {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	/*align-items: center;*/
+	align-items: center;
 	width: 40%;
-	text-decoration:none;
 }
 
 
