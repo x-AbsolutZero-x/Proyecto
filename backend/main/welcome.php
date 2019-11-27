@@ -6,6 +6,8 @@ if($_SESSION["tipo"]==="cliente"){
     session_destroy();
     header("location: login.php");
     exit;
+}else{
+    echo "<p class='admin'><em>Bienvenido a Capitan Vape.</em></p>";
 }
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -18,7 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Bienvenido</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
@@ -26,11 +28,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1>Hola, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenido a Capitan Vape.</h1>
+        <p></p>
     </div>
     <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        <a href="reset-password.php" class="btn btn-warning">Cambiar contraseña</a>
+        <a href="logout.php" class="btn btn-danger">Cerrar sesión</a>
     </p>
     <head>
     <meta charset="UTF-8">
@@ -62,8 +65,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">producto Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Producto</a>
+                        <h2 class="pull-left">Lista de Productos</h2>
+                        <a href="create.php" class="btn btn-success pull-right">Agregar producto</a>
                     </div>
                     <?php
                     // Include config file
@@ -77,12 +80,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th>#</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>descripcion</th>";
-                                        echo "<th>categoria</th>";
-                                        echo "<th>precio</th>";
-                                        echo "<th>Action</th>";
-                                        echo "<th>Imagenes</th>";
+                                        echo "<th>Nombre</th>";
+                                        echo "<th>Descripcion</th>";
+                                        echo "<th>Categoria</th>";
+                                        echo "<th>Precio</th>";
+                                        echo "<th>Imagen</th>";
+                                        echo "<th>Accion</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";

@@ -78,14 +78,14 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Delete Record</h1>
+                        <h1>Borrar registro de producto</h1>
                     </div>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger fade in">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Are you sure you want to delete this record?</p><br>
+                            <p>¿Estas seguro de que quieres eliminar este registro?</p><br>
                             <p>
-                                <input type="submit" value="Yes" class="btn btn-danger">
+                                <input type="submit" value="Si" class="btn btn-danger">
                                 <a href="welcome.php" class="btn btn-default">No</a>
                             </p>
                         </div>

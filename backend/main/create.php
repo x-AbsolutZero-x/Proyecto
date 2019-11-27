@@ -22,16 +22,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate name
     $input_name = trim($_POST["name"]);
     if(empty($input_name)){
-        $name_err = "Please enter a name.";
+        $name_err = "Porfavor ingrese un nombre.";
     } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
+        $name_err = "Porfavor ingrese un nombre valido.";
     } else{
         $name = $input_name;
     }    
     // Validate descripcion
     $input_descripcion = trim($_POST["descripcion"]);
     if(empty($input_descripcion)){
-        $descripcion_err = "Please enter a descripcion.";     
+        $descripcion_err = "Porfavor ingrese una descripción.";     
     } else{
         $descripcion = $input_descripcion;
     }
@@ -39,9 +39,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate categoria
     $input_categoria = trim($_POST["categoria"]);
     if(empty($input_categoria)){
-        $categoria_err = "Please enter a categoria.";
+        $categoria_err = "Porfavor ingrese una categoría.";
     } elseif(!filter_var($input_categoria, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $categoria_err = "Please enter a valid categoria.";
+        $categoria_err = "Porfavor seleccione una categoría.";
     } else{
         $categoria = $input_categoria;
     }
@@ -49,9 +49,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate precio
     $input_precio = trim($_POST["precio"]);
     if(empty($input_precio)){
-        $precio_err = "Please enter the precio amount.";     
+        $precio_err = "Porfavor ingrese el precio.";     
     } elseif(!ctype_digit($input_precio)){
-        $precio_err = "Please enter a positive integer value.";
+        $precio_err = "Porfavor ingrese un valor positivo.";
     } else{
         $precio = $input_precio;
     }
@@ -64,38 +64,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
+            echo "El archivo es una imagen - " . $check["mime"] . ".";
             $uploadOk = 1;
         } else {
-            echo "File is not an image.";
+            echo "Lo sentimos, el archivo no es una imagen.";
             $uploadOk = 0;
         }
     }
     // Check if file already exists
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        echo "Lo sentimos, el archivo ya existe.";
         $uploadOk = 0;
     }
     // Check file size
-    if ($_FILES["fileToUpload"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+    if ($_FILES["fileToUpload"]["size"] > 1000000) {
+        echo "Lo sentimos, tu archivo es demasiado grande.";
         $uploadOk = 0;
     }
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo " Lo sentimos, solo se aceptan archivos JPG, JPEG, PNG & GIF.";
         $uploadOk = 0;
     }
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+        echo " Su archivo no fue subido.";
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            echo " El archivo ". basename( $_FILES["fileToUpload"]["name"]). " ha sido subido.";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo " Lo sentimos, hubo un error al subir su archivo.";
         }
     }
     // Check input errors before inserting in database
@@ -120,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: welcome.php");
                 exit();
             } else{
-                echo "Something went wrong. Please try again later.";
+                echo " Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
             }
         }
          
@@ -154,7 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="page-header">
                         <h2>Añadir producto</h2>
                     </div>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Complete este formulario y presione el botón de agregar para añadir el producto a la base de datos.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                             <label>Nombre</label>
