@@ -225,7 +225,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update Record</title>
+    <title>Actualizar registro de producto</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         .wrapper{
@@ -240,22 +240,22 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2>Update Record</h2>
+                        <h2>Actualizar registro de producto</h2>
                     </div>
-                    <p>Please edit the input values and submit to update the record.</p>
+                    <p>Porfavor ingrese los nuevos datos del registro del producto para actualizarlos con la base de datos.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
+                            <label>Nombre</label>
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($descripcion_err)) ? 'has-error' : ''; ?>">
-                            <label>descripcion</label>
+                            <label>Descripción</label>
                             <textarea name="descripcion" class="form-control"><?php echo $descripcion; ?></textarea>
                             <span class="help-block"><?php echo $descripcion_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
-                            <label>precio</label>
+                            <label>Precio</label>
                             <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                             <span class="help-block"><?php echo $precio_err;?></span>
                         </div>
@@ -265,8 +265,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <span class="help-block"><?php echo $imagen_err;?></span>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-                        <input type="submit" class="btn btn-primary" value="submit">
-                        <a href="welcome.php" class="btn btn-default">Cancel</a>
+                        <input type="submit" class="btn btn-primary" value="Actualizar">
+                        <a href="welcome.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>        
