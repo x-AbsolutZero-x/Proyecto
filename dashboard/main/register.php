@@ -2,6 +2,13 @@
 // Include config file
 require_once "../../lib/config.php";
  
+if($_SESSION["tipo"]==="cliente"){
+    session_destroy();
+    header("location: login.php");
+    exit;
+}else{
+    echo "<p class='admin'><em>Bienvenido a Capitan Vape.</em></p>";
+}
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
