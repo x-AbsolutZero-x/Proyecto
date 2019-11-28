@@ -8,7 +8,7 @@ if($_SESSION)
 else{
     $client = null;
 }
-
+$client = $_SESSION['username'];
 $id_prod = $_GET["id_producto"];
 $id_user = $_SESSION["id"];
 $name = $_GET["nombre"];
@@ -30,24 +30,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     if(empty($comentario_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO calificacion (id_cliente,id_producto,puntuacion,comentario) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO calificacion (id_cliente,id_producto,username ,puntuacion,comentario) VALUES (?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_user, $param_prod, $param_punt, $param_coment);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_user, $param_prod,$param_username, $param_punt, $param_coment);
             
             // Set parameters
             $param_user = $id_user;
-            $param_prod = $id_prod;
+			$param_prod = $id_prod;
+			$param_username = $client;
             $param_punt = $id_prod;
             $param_coment = $comentario;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                // Records created successfully. Redirect to landing page
-                header("Refresh:0");
+				// Records created successfully. Redirect to landing page
+				header("Refresh:0");
             } else{
-                echo (mysqli_error($link));
+                //echo (mysqli_error($link));
             }
         }
          
@@ -93,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 					<!-- Nav -->
 					<nav id="nav">
 							<ul>
-								<li><a href="index.php">Inicio</a></li>
+								<li><a href="../index.php">Inicio</a></li>
 								<li>
 									<a href="#">Productos</a>
 									<ul>
@@ -104,8 +105,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 												<li><a href="../M_Mecanicos.php?categoria=mecanicos">Mecánicos</a></li>
 											</ul>
 										</li>
-										<li><a href="Kits.php?categoria=kits">Kits</a></li>
-										<li><a href="AIO.php?categoria=aio">AIO</a></li>
+										<li><a href="../Kits.php?categoria=kits">Kits</a></li>
+										<li><a href="../AIO.php?categoria=aio">AIO</a></li>
 										<li>
 											<a href="#">Atomizadores</a>
 											<ul>
@@ -135,13 +136,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 								<li>
 									<a href="#">Bar</a>
 									<ul>
-										<li><a href="Bar_snacks.php?categoria=snacks">Snacks</a></li>
-										<li><a href="Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
+										<li><a href="../Bar_snacks.php?categoria=snacks">Snacks</a></li>
+										<li><a href="../Bar_drinks.php?categoria=drinks">Bebidas</a></li>										
 									</ul>
 								</li>
-								<li><a href="right-sidebar.php?categoria=rsidebar">Right Sidebar</a></li>
-								<li><a href="login.php">Iniciar sesion</a></li>
-								<li><a href="register.php">Registrarse</a></li>
+								<?php
+                                    if($client !=null){
+                                        echo "<li><a>".$_SESSION["username"]."</a></li>";
+                                        echo "<li><a href='../logout.php'>Cerrar Sesion</a></li>";
+                                    }
+                                    else{
+                                        echo "<li><a href='../login.php'>Iniciar sesion</a></li>";
+								        echo "<li><a href='../register.php'>Registrarse</a></li>";
+                                    }   
+                                ?>
 							</ul>
 						</nav>
 
@@ -156,74 +164,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 								
 								<hr />
 
-								<?php include("seccion_instagram.php");?>
+								<?php include("seccion_instagram_producto.php");?>
 									
 								<hr />
-								<section>
-									<header>
-										<h3><a href="#">Sed lorem etiam consequat</a></h3>
-									</header>
-									<p>
-										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-									</p>
-									<div class="row gtr-50">
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="../../images/pic10.jpg" alt="pic10" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Nibh sed cubilia</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="../../images/pic11.jpg" alt="pic11" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Proin sed adipiscing</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="../../images/pic12.jpg" alt="pic12" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Lorem feugiat magna</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="../../images/pic13.jpg" alt="pic13" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Sed tempus fringilla</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="../../images/pic14.jpg" alt="pic14" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Malesuada fermentum</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-									</div>
-									<footer>
-										<a href="#" class="button">Magna Adipiscing</a>
-									</footer>
-								</section>
+								
 							</div>
 							<div class="col-8 col-12-mobile imp-mobile" id="content">
 								<article id="main">
 									<header>
-										<p>
-											Morbi convallis lectus malesuada sed fermentum dolore amet
-										</p>
 										</header>
 							
 										<!--Productos-->	
@@ -232,8 +180,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         require_once "../../lib/config.php";
                                         $id_prod = $_GET["id_producto"];
                                         // Attempt select query execution
-                                        $sql = "SELECT * FROM producto WHERE id = '".$id_prod."' ";
-                                        if($result = mysqli_query($link, $sql)){
+                                        $sql2 = "SELECT * FROM producto WHERE id = '".$id_prod."' ";
+                                        
+                                        if($result = mysqli_query($link, $sql2)){
                                             if(mysqli_num_rows($result) > 0){
                                                         
                                                     while($row = mysqli_fetch_array($result)){
@@ -254,12 +203,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                 // Free result set
                                                 mysqli_free_result($result);
                                             } else{
-                                                echo "<p class='lead'><em>No records were found.</em></p>";
+                                                //echo "<p class='lead'><em>No records were found.</em></p>";
                                             }
-                                        } else{
-                                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                                         }
-                                        $id_prod = $_GET["id_producto"];
+                                        
+                                        
                                         $sql ="SELECT * FROM calificacion WHERE id_producto = '".$id_prod."'";
                                         if($result = mysqli_query($link, $sql)){
                                             if(mysqli_num_rows($result) > 0){
@@ -268,7 +216,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                         
                                                         echo "<div>";
                                                         echo "<div class='commentbox'>";
-                                                        echo "<p>Usuario: " . $row['id_cliente'] . "</p>";
+                                                        echo "<p>Usuario: ".$row['username']."</p>";
                                                         echo "<p>" . $row['comentario'] . "</p>";
                                                         echo "</div>";
                                                         
@@ -277,9 +225,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                 mysqli_free_result($result);
                                             } else{
                                                 echo "<p class='lead'><em>No records were found.</em></p>";
+                                                echo "<div>";
+                                                echo "<div class='commentbox'>";
+                                                echo "</div>";
                                             }
                                         } else{
-                                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                                            //echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                                         }
 
                                         echo "</div>";
@@ -372,7 +323,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 									</div>
 									<div class="info">
 										
-											<h3><a href="index.html">Capitan Vape</a></h3>
+											<h3><a href="../index.html">Capitan Vape</a></h3>
 										<p>Boulevard Cuscatlán, Plaza Paradiso Local 3 Nuevo Cuscatlán, CP</p>
 									</div>
 									<footer class="ubi-link">
