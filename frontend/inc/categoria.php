@@ -11,7 +11,7 @@
                 while($row = mysqli_fetch_array($result)){
                     
                     echo "<div class='caja producto'>";
-                    echo "<a class = 'imagen'  href='inc/producto.php?id=".$row['id']."'>";
+                    echo "<a class = 'imagen'  href='inc/producto.php?id_producto=".$row['id']."&categoria=".$row["categoria"]."&nombre=".$row['name']."'>";
                     echo '<div class="imagen"> . <img class="activator" src="../images/'.$row['imagen'].'" "></div>';
                     echo "<div class='info'><div class='caja-title'><header class='title' '><h3>" . $row['name'] . "</h3></header></div>";
                     echo "</a>";
@@ -19,7 +19,6 @@
                     echo "<li>Descripción: " . $row['descripcion'] . "</li>";
                     echo "<li>Categoría: " . $row['categoria'] . "</li>";
                     echo "<li>Precio: $" . $row['precio'] . "</li>";
-                    echo "<li><a href='inc/producto.php?id_producto=".$row['id']."&categoria=".$row["categoria"]."&nombre=".$row['name']."'>Agregar un comentario</a></li>";
                     echo "</ul></div>";
                     echo "</div></div>";
                     

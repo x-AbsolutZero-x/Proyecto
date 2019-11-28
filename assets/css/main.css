@@ -1860,7 +1860,6 @@ input, select, textarea {
 	flex-direction: row;
 	margin:10%;
 	border-bottom: 10px;
-	border-bottom: 8px solid grey;
 
 }
 
@@ -1868,7 +1867,6 @@ input, select, textarea {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
 	width: 40%;
 }
 
